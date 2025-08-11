@@ -12,6 +12,18 @@ This research project, developed as part of the **1M1B (One Million for One Bill
 - Battery storage management
 - Smart grid integration
 
+## 📊 Model Output & Results
+
+### Model Performance Visualization
+
+![Model Performance](<public/Screenshot%20(800).png>)
+_Actual vs Predicted Solar Power Output showing model accuracy on test data_
+
+### Future Forecast Dashboard
+
+![Future Forecast Dashboard](public/Screenshot%202025-08-11%20110915.png)
+_Comprehensive 7-day forecast dashboard showing power predictions, daily energy production, weather correlations, and hourly patterns_
+
 ## 🚀 Features
 
 - **Complete ML Pipeline**: End-to-end workflow from data generation to visualization
@@ -52,6 +64,7 @@ solar-power-forecasting/
 ## 📊 Model Performance
 
 The trained XGBoost model achieves:
+
 - **Mean Absolute Error (MAE)**: ~2.6 MW
 - **Root Mean Square Error (RMSE)**: ~4.4 MW
 - **Training Data**: 800 samples (80%)
@@ -61,17 +74,20 @@ The trained XGBoost model achieves:
 ## 🔧 Installation & Setup
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository-url>
    cd solar-power-forecasting
    ```
 
 2. **Install required packages**:
+
    ```bash
    pip install xgboost scikit-learn matplotlib pandas numpy
    ```
 
 3. **Run the main model**:
+
    ```bash
    python solar_forecasting_model.py
    ```
@@ -91,6 +107,7 @@ python solar_forecasting_model.py
 ```
 
 This script will:
+
 1. Generate synthetic solar power and weather data (1000 hours)
 2. Preprocess and merge datasets with feature engineering
 3. Train XGBoost regression model
@@ -105,6 +122,7 @@ python future_prediction.py
 ```
 
 This module will:
+
 1. Load the trained model
 2. Generate future weather forecast data
 3. Make solar power predictions for the next 7 days
@@ -114,16 +132,19 @@ This module will:
 ## 📊 Data Schema
 
 ### Power Generation Data
+
 - `datetime`: Hourly timestamps
 - `power_output_mw`: Solar power output (0-100 MW)
 
 ### Weather Data
+
 - `datetime`: Hourly timestamps
 - `temperature_celsius`: Ambient temperature (10-35°C)
 - `cloud_cover_percent`: Cloud coverage (0-100%)
 - `ghi`: Global Horizontal Irradiance (0-1000 W/m²)
 
 ### Engineered Features
+
 - `hour`: Hour of day (0-23)
 - `day_of_week`: Day of week (0-6)
 - `month`: Month (1-12)
@@ -131,12 +152,14 @@ This module will:
 ## 🎯 Key Insights
 
 ### Model Findings
+
 - Solar power follows predictable diurnal patterns (zero at night, peak at noon)
 - Weather conditions (cloud cover, solar irradiance) significantly impact output
 - Temporal features capture seasonal and daily cycles effectively
 - XGBoost successfully learns complex weather-power relationships
 
 ### Forecast Analysis
+
 - Best production typically occurs during midday hours (11 AM - 2 PM)
 - Cloud cover shows strong inverse correlation with power output
 - Daily energy production varies based on weather conditions
